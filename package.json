@@ -1,0 +1,52 @@
+{
+  "name": "easy-angular",
+  "version": "0.0.0",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test",
+    "add-page": "ng g m pages/page-name --routing && ng g component pages/page-name --skip-tests"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "^17.2.2",
+    "@angular/cdk": "^17.3.10",
+    "@angular/common": "^17.2.2",
+    "@angular/compiler": "^17.2.2",
+    "@angular/core": "^17.2.2",
+    "@angular/forms": "^17.2.2",
+    "@angular/localize": "^17.2.2",
+    "@angular/material": "^17.3.10",
+    "@angular/platform-browser": "^17.2.2",
+    "@angular/platform-browser-dynamic": "^17.2.2",
+    "@angular/router": "^17.2.2",
+    "@caliatys/array-typer": "^1.0.0",
+    "@ng-bootstrap/ng-bootstrap": "^16.0.0",
+    "@ngx-translate/core": "^15.0.0",
+    "@ngx-translate/http-loader": "^8.0.0",
+    "@popperjs/core": "^2.11.8",
+    "angular-svg-icon": "^17.0.0",
+    "axios": "^1.6.7",
+    "bootstrap": "^5.3.3",
+    "date-fns": "^3.6.0",
+    "rxjs": "~7.8.1",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.14.4"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^17.2.1",
+    "@angular/cli": "^17.2.1",
+    "@angular/compiler-cli": "^17.2.2",
+    "@types/jasmine": "~3.10.0",
+    "@types/node": "^12.11.1",
+    "jasmine-core": "~4.0.0",
+    "karma": "~6.3.0",
+    "karma-chrome-launcher": "~3.1.0",
+    "karma-coverage": "~2.1.0",
+    "karma-jasmine": "~4.0.0",
+    "karma-jasmine-html-reporter": "~1.7.0",
+    "typescript": "~5.3.3"
+  }
+}

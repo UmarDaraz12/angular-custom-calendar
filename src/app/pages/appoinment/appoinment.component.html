@@ -1,0 +1,36 @@
+<app-page-layout>
+  <div class="container my-3">
+
+    <app-progress-bar *ngIf="storeService.isLoading()"></app-progress-bar>
+
+    <ng-container *ngIf="!storeService.isLoading()">
+      <div class="row col-lg-3 col-md-3">
+        <button (click)="addAppointment()" class="btn btn-primary mb-3 px-5" >
+          <span class="px-4 d-block">{{ 'ADD_APPOINTMENT' | translate }}</span>
+        </button>
+      </div>
+      <div class="calendar">
+        <div class="header">
+          <button (click)="prevMonth()">&#10094;</button>
+          <span>{{ viewDate | date: 'MMMM yyyy' }}</span>
+          <button (click)="nextMonth()">&#10095;</button>
+        </div>
+        <div class="weekdays">
+          <span *ngFor="let day of weekDays">{{ day }}</span>
+        </div>
+        <div class="days" cdkDropListGroup>
+          <div style="border: 2px solid #c3b0b0; padding:10px;"
+               *ngFor="let day of daysInMonth" cdkDropList [cdkDropListData]="day.date" (cdkDropListDropped)="drop($event,day)">
+            <span>{{ day.date | date: 'd' }}</span>
+            <div style="background-color: #adadad; width: 100%;cursor:pointer;margin: 2px"
+                 *ngFor="let event of day?.events"  cdkDropList cdkDrag [cdkDragData]="event" (cdkDropListDropped)="drop($event,day)">
+              <mat-icon (click)="deleteEvent(event.id)">highlight_off</mat-icon>
+              <span (click)="selectDay(event)">{{ event?.title }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+
+  </div>
+</app-page-layout>
