@@ -1,6 +1,6 @@
 // noinspection SpellCheckingInspection
 
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {PageLayoutComponent} from "@layouts/page-layout/page-layout.component";
 import {DatePipe, NgForOf, NgIf} from "@angular/common";
 import {ProgressBarComponent} from "@blocks/progress-bar/progress-bar.component";
@@ -18,6 +18,8 @@ import {
 } from "@angular/cdk/drag-drop";
 import {MatIcon} from "@angular/material/icon";
 
+
+
 // noinspection JSUnusedLocalSymbols,JSUnusedGlobalSymbols
 @Component({
   selector: 'app-appoinment',
@@ -26,7 +28,7 @@ import {MatIcon} from "@angular/material/icon";
   templateUrl: './appoinment.component.html',
   styleUrl: './appoinment.component.scss'
 })
-export class AppoinmentComponent {
+export class AppoinmentComponent implements OnInit {
   viewDate: Date = new Date();
   weekDays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
   daysInMonth: any[] = [];
@@ -95,7 +97,7 @@ export class AppoinmentComponent {
   }
 
   selectDay(day: any): void {
-    this.selectedEvent = { id: day.id,date: day.date, title: day.title, description: day.description };
+    this.selectedEvent = { id: day?.id,date: day?.date, title: day?.title, description: day?.description };
     console.log(this.selectedEvent,'<<<')
     this.addAppointment(this.selectedEvent);
   }
@@ -111,7 +113,6 @@ export class AppoinmentComponent {
   drop(event: CdkDragDrop<any[]>, day: any): void {
     console.log(event, '<<<')
     const draggedEvent = event.item.data;
-    const previousDate = draggedEvent.date;
 
     draggedEvent.date = day.date;
 
