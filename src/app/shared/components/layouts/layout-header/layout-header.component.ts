@@ -15,6 +15,7 @@ import { TranslateModule }   from '@ngx-translate/core';
 // Internal modules
 import { environment }       from '@env/environment';
 
+// noinspection ES6MissingAwait,GrazieInspection
 @Component({
   selector    : 'app-layout-header',
   templateUrl : './layout-header.component.html',

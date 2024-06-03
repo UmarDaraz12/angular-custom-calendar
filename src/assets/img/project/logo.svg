@@ -1,3 +1,6 @@
+<!--suppress ALL -->
+
+
 <svg width="354.45160830020905" height="52.096770882606506" xmlns="http://www.w3.org/2000/svg" style="background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;" preserveAspectRatio="xMidYMid"><rect id="backgroundrect" width="100%" height="100%" x="0" y="0" fill="none" stroke="none" style="" class=""/><defs><filter id="editing-hole" x="-100%" y="-100%" width="300%" height="300%"><feFlood flood-color="#000" result="black"/><feMorphology operator="dilate" radius="2" in="SourceGraphic" result="erode"/><feGaussianBlur in="erode" stdDeviation="4" result="blur"/><feOffset in="blur" dx="2" dy="2" result="offset"/><feComposite operator="atop" in="offset" in2="black" result="merge"/><feComposite operator="in" in="merge" in2="SourceGraphic" result="inner-shadow"/></filter></defs><style>text {
   font-size: 64px;
   font-family: Arial Black;

@@ -1,4 +1,6 @@
 // Angular modules
+// noinspection ES6UnusedImports
+
 import { Injectable }   from '@angular/core';
 
 // Internal modules
@@ -10,6 +12,7 @@ import { StorageKey }   from '@enums/storage-key.enum';
 // Models
 // import { AuthResponse } from '@models/auth-response.model';
 
+// noinspection JSUnusedGlobalSymbols,SpellCheckingInspection
 @Injectable()
 export class StorageHelper
 {

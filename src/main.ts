@@ -1,4 +1,5 @@
 /// <reference types="@angular/localize" />
+// noinspection ES6PreferShortImport
 
 // Angular modules
 import { enableProdMode }       from '@angular/core';

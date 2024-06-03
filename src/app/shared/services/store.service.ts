@@ -11,6 +11,7 @@ import { TranslateService } from '@ngx-translate/core';
 // Internal modules
 import { environment }      from '@env/environment';
 
+// noinspection JSUnusedGlobalSymbols
 @Injectable()
 export class StoreService
 {

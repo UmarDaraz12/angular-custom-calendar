@@ -1,3 +1,5 @@
+// noinspection JSUnusedGlobalSymbols
+
 export enum Endpoint
 {
   AUTHENTICATE     = 'authenticate',

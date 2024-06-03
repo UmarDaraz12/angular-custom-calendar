@@ -30,7 +30,6 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import {CdkDrag, CdkDropList, DragDropModule} from "@angular/cdk/drag-drop";
 import {MatDatepickerInput} from "@angular/material/datepicker";
 import {MatNativeDateModule} from "@angular/material/core";
-import {MatIcon} from "@angular/material/icon";
 
 export function createTranslateLoader(http : HttpClient)
 {

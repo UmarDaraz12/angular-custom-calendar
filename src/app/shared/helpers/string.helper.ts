@@ -1,6 +1,7 @@
 // Angular modules
 import { Injectable } from '@angular/core';
 
+// noinspection JSUnusedGlobalSymbols
 @Injectable()
 export class StringHelper
 {

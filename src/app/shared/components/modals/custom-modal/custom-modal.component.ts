@@ -13,14 +13,13 @@ import {MatFormField} from "@angular/material/form-field";
 import {FormControl, FormGroup, FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {
   MatDatepicker,
-  MatDatepickerInput,
   MatDatepickerModule,
   MatDatepickerToggle
 } from "@angular/material/datepicker";
-import {MatNativeDateModule} from "@angular/material/core";
 import {MatInputModule} from "@angular/material/input";
 
 
+// noinspection JSUnusedGlobalSymbols,SpellCheckingInspection
 @Component({
   selector: 'app-custom-modal',
   standalone: true,
@@ -43,7 +42,6 @@ import {MatInputModule} from "@angular/material/input";
 })
 export class CustomModalComponent {
   component: any;
-  dataForEdit: any;
   appointmentForm = new FormGroup({
     id: new FormControl(0),
     title    : new FormControl(''),

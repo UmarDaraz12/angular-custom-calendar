@@ -1,3 +1,5 @@
+// noinspection SpellCheckingInspection
+
 import { Component } from '@angular/core';
 import {PageLayoutComponent} from "@layouts/page-layout/page-layout.component";
 import {DatePipe, NgForOf, NgIf} from "@angular/common";
@@ -6,18 +8,17 @@ import {StoreService} from "@services/store.service";
 import {TranslateModule} from "@ngx-translate/core";
 import {CustomModalComponent} from "@modals/custom-modal/custom-modal.component";
 import {MatDialog} from "@angular/material/dialog";
-import { startOfMonth, endOfMonth, startOfWeek, endOfWeek, addDays, addMonths, subMonths, format } from 'date-fns';
+import { startOfMonth, endOfMonth, startOfWeek, endOfWeek, addDays, addMonths, subMonths } from 'date-fns';
 import {EventService} from "../../../services/event-service/event.service";
 import {
   CdkDrag,
   CdkDragDrop,
   CdkDropList,
   CdkDropListGroup,
-  moveItemInArray,
-  transferArrayItem
 } from "@angular/cdk/drag-drop";
 import {MatIcon} from "@angular/material/icon";
 
+// noinspection JSUnusedLocalSymbols,JSUnusedGlobalSymbols
 @Component({
   selector: 'app-appoinment',
   standalone  : true,

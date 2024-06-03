@@ -1,7 +1,8 @@
+<!--suppress ALL -->
 <ng-container *ngFor="let toast of toastManager.toasts">
 
   <!-- NOTE With header -->
-  <ng-container *ngIf="toast.headerKey && toast.withHeader else withoutHeader">
+  <ng-container *ngIf="toast.headerKey && toast.withHeader else withoutHeader ">
 
     <ngb-toast class="bg-{{ toast.type }}"
       [autohide]="toast.autoHide"
@@ -9,7 +10,7 @@
       (hide)="toastManager.remove(toast.id)">
       <ng-template ngbToastHeader>
         <!-- TODO Icon : Success / Info / Error -->
-        <div class="text-white me-auto">{{ toast.headerKey | translate }}</div>
+        <div class="text-white me-auto">{{ toast.headerKey | translate  }}</div>
       </ng-template>
       <div class="text-dark">{{ toast.body }}</div>
     </ngb-toast>

@@ -14,6 +14,7 @@ import { StoreService }         from '@services/store.service';
 // Components
 import { ProgressBarComponent } from '@blocks/progress-bar/progress-bar.component';
 
+// noinspection JSUnusedGlobalSymbols
 @Component({
   selector    : 'app-auth',
   templateUrl : './auth.component.html',

@@ -1,3 +1,5 @@
+// noinspection JSUnusedGlobalSymbols
+
 import { Injectable } from '@angular/core';
 interface Event {
   id: number;

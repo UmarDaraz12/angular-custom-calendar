@@ -1,3 +1,5 @@
+// noinspection SpellCheckingInspection
+
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AppoinmentComponent } from './appoinment.component';
@@ -11,7 +13,7 @@ describe('AppoinmentComponent', () => {
       imports: [AppoinmentComponent]
     })
     .compileComponents();
-    
+
     fixture = TestBed.createComponent(AppoinmentComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

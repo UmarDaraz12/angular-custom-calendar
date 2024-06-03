@@ -1,4 +1,6 @@
 // Angular modules
+// noinspection SpellCheckingInspection
+
 import { Routes } from '@angular/router';
 
 export const routes : Routes = [

@@ -1,4 +1,6 @@
 // Enums
+// noinspection HttpUrlsUsage
+
 import { EnvName } from '@enums/environment.enum';
 
 // Packages

@@ -17,6 +17,7 @@ import { TranslateModule }     from '@ngx-translate/core';
 import { AppService }          from '@services/app.service';
 import { StoreService }        from '@services/store.service';
 
+// noinspection ES6MissingAwait
 @Component({
   selector    : 'app-forgot-password',
   templateUrl : './forgot-password.component.html',

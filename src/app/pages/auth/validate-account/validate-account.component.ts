@@ -1,4 +1,6 @@
 // Angular modules
+// noinspection ES6MissingAwait
+
 import { NgClass }             from '@angular/common';
 import { NgIf }                from '@angular/common';
 import { OnInit }              from '@angular/core';

@@ -1,12 +1,12 @@
 // Angular modules
+// noinspection ES6UnusedImports,JSUnusedLocalSymbols
+
 import { Injectable }               from '@angular/core';
 import { Router }                   from '@angular/router';
 
 // External modules
-import { ArrayTyper }               from '@caliatys/array-typer';
 import { TranslateService }         from '@ngx-translate/core';
 import axios                        from 'axios';
-import { AxiosResponse }            from 'axios';
 import { AxiosError }               from 'axios';
 import { AxiosInstance }            from 'axios';
 import { CreateAxiosDefaults }      from 'axios';
