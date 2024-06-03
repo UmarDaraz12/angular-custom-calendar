@@ -9,8 +9,8 @@ export class StringHelper
    */
   public static interpolate(theString : string, argumentArray : string[]) : string
   {
-    let regex = /%s/;
-    let _r = function(p : string, c : string) { return p.replace(regex, c); };
+    const regex = /%s/;
+    const _r = function(p : string, c : string) { return p.replace(regex, c); };
     return argumentArray.reduce(_r, theString);
   }
 

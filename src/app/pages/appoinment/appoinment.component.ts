@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {PageLayoutComponent} from "@layouts/page-layout/page-layout.component";
 import {DatePipe, NgForOf, NgIf} from "@angular/common";
 import {ProgressBarComponent} from "@blocks/progress-bar/progress-bar.component";
@@ -25,7 +25,7 @@ import {MatIcon} from "@angular/material/icon";
   templateUrl: './appoinment.component.html',
   styleUrl: './appoinment.component.scss'
 })
-export class AppoinmentComponent {
+export class AppoinmentComponent implements OnInit {
   viewDate: Date = new Date();
   weekDays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
   daysInMonth: any[] = [];
