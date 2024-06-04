@@ -6,20 +6,18 @@ import { Router }                   from '@angular/router';
 
 // External modules
 import { TranslateService }         from '@ngx-translate/core';
-import axios                        from 'axios';
-import { AxiosError }               from 'axios';
-import { AxiosInstance }            from 'axios';
+// import axios                        from 'axios';
+// import { AxiosError }               from 'axios';
+// import { AxiosInstance }            from 'axios';
 import { CreateAxiosDefaults }      from 'axios';
 
 // Internal modules
 import { ToastManager }             from '@blocks/toast/toast.manager';
-import { environment }              from '@env/environment';
+// import { environment }              from '@env/environment';
 
 // Helpers
-import { StorageHelper }            from '@helpers/storage.helper';
 
 // Enums
-import { Endpoint }                 from '@enums/endpoint.enum';
 
 // Models
 
@@ -40,10 +38,10 @@ export class AppService
   };
 
   // NOTE Instances
-  private api : AxiosInstance = axios.create({
-    baseURL : environment.apiBaseUrl,
-    ...this.default,
-  });
+  // private api : AxiosInstance = axios.create({
+  //   baseURL : environment.apiBaseUrl,
+  //   ...this.default,
+  // });
 
   // NOTE Controller
   private controller : AbortController = new AbortController();
@@ -56,8 +54,8 @@ export class AppService
     private translateService : TranslateService,
   )
   {
-    this.initRequestInterceptor(this.api);
-    this.initResponseInterceptor(this.api);
+    // this.initRequestInterceptor(this.api);
+    // this.initResponseInterceptor(this.api);
 
     this.initAuthHeader();
   }
@@ -68,6 +66,7 @@ export class AppService
 
   public async authenticate(email : string, password : string) : Promise<boolean>
   {
+    console.log(email, password)
     return Promise.resolve(true);
 
     // StorageHelper.removeToken();
@@ -86,6 +85,7 @@ export class AppService
 
   public async forgotPassword(email : string) : Promise<boolean>
   {
+    console.log(email)
     return Promise.resolve(true);
 
     // const url      = Endpoint.FORGOT_PASSWORD;
@@ -96,6 +96,7 @@ export class AppService
 
   public async validateAccount(token : string, password : string) : Promise<boolean>
   {
+    console.log(token, password)
     return Promise.resolve(true);
 
     // const url      = Endpoint.VALIDATE_ACCOUNT;
@@ -131,47 +132,47 @@ export class AppService
     // this.api.defaults.headers.common['Token']         = token.jwtToken;
   }
 
-  public initRequestInterceptor(instance : AxiosInstance) : void
-  {
-    instance.interceptors.request.use((config) =>
-    {
-      console.log('interceptors.request.config', config);
-      this.storeService.isLoading.set(true);
-
-      return config;
-    },
-    (error) =>
-    {
-      console.log('interceptors.request.error', error);
-      this.storeService.isLoading.set(false);
-
-      this.toastManager.quickShow(error);
-      return Promise.reject(error);
-    });
-  }
-
-  public initResponseInterceptor(instance : AxiosInstance) : void
-  {
-    instance.interceptors.response.use((response) =>
-    {
-      console.log('interceptors.response.response', response);
-      this.storeService.isLoading.set(false);
-
-      return response;
-    },
-    async (error : AxiosError) =>
-    {
-      console.log('interceptors.response.error', error);
-      this.storeService.isLoading.set(false);
-
-      // NOTE Prevent request canceled error
-      if (error.code === 'ERR_CANCELED')
-        return Promise.resolve(error);
-
-      this.toastManager.quickShow(error.message);
-      return Promise.reject(error);
-    });
-  }
+  // public initRequestInterceptor(instance : AxiosInstance) : void
+  // {
+  //   instance.interceptors.request.use((config) =>
+  //   {
+  //     console.log('interceptors.request.config', config);
+  //     this.storeService.isLoading.set(true);
+  //
+  //     return config;
+  //   },
+  //   (error) =>
+  //   {
+  //     console.log('interceptors.request.error', error);
+  //     this.storeService.isLoading.set(false);
+  //
+  //     this.toastManager.quickShow(error);
+  //     return Promise.reject(error);
+  //   });
+  // }
+  //
+  // public initResponseInterceptor(instance : AxiosInstance) : void
+  // {
+  //   instance.interceptors.response.use((response) =>
+  //   {
+  //     console.log('interceptors.response.response', response);
+  //     this.storeService.isLoading.set(false);
+  //
+  //     return response;
+  //   },
+  //   async (error : AxiosError) =>
+  //   {
+  //     console.log('interceptors.response.error', error);
+  //     this.storeService.isLoading.set(false);
+  //
+  //     // NOTE Prevent request canceled error
+  //     if (error.code === 'ERR_CANCELED')
+  //       return Promise.resolve(error);
+  //
+  //     this.toastManager.quickShow(error.message);
+  //     return Promise.reject(error);
+  //   });
+  // }
 
   // !SECTION Helpers
 }

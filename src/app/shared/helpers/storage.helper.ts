@@ -49,18 +49,18 @@ export class StorageHelper
   // SECTION LocalStorage -------------------------------------------------------------------------
   // ----------------------------------------------------------------------------------------------
 
-  public static setItem(key : string, value : any, prefix : boolean = true) : void
+  public static setItem(key : string, value : NonNullable<unknown>, prefix : boolean = true) : void
   {
     const itemKey = this.prefixer(key, prefix);
     localStorage.setItem(itemKey, JSON.stringify(value));
   }
 
-  public static getItem(key : string, prefix : boolean = true) : any
+  public static getItem(key : string, prefix : boolean = true) : NonNullable<unknown> | null
   {
     const itemKey = this.prefixer(key, prefix);
     const res = localStorage.getItem(itemKey);
     if (res !== 'undefined')
-      return JSON.parse(res as any);
+      return JSON.parse(res as never);
     console.error('StorageHelper : getItem -> undefined key');
     return null;
   }

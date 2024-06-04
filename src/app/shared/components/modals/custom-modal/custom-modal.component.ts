@@ -17,6 +17,7 @@ import {
   MatDatepickerToggle
 } from "@angular/material/datepicker";
 import {MatInputModule} from "@angular/material/input";
+import {Event} from '../../../../pages/appoinment/appoinment.component'
 
 
 // noinspection JSUnusedGlobalSymbols,SpellCheckingInspection
@@ -41,20 +42,20 @@ import {MatInputModule} from "@angular/material/input";
   styleUrl: './custom-modal.component.scss'
 })
 export class CustomModalComponent {
-  component: any;
+  component: string | undefined;
   appointmentForm = new FormGroup({
     id: new FormControl(0),
     title    : new FormControl(''),
     description    : new FormControl(''),
-    date : new FormControl(''),
+    date : new FormControl(new Date),
   });
   constructor(
     public dialogRef: MatDialogRef<CustomModalComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any,
+    @Inject(MAT_DIALOG_DATA) public data: {component: string, data: Event},
     private _dialog: MatDialog,
   ) {
-    if (data.component || data.data){
-      this.component = data.component;
+    if (data?.component || data?.data){
+      this.component = data?.component;
       this.appointmentForm.patchValue({
         id: data?.data?.id,
         title: data?.data?.title,

@@ -2,7 +2,6 @@
 import { NgIf }            from '@angular/common';
 import { Component }       from '@angular/core';
 import { Input }           from '@angular/core';
-import { OnInit }          from '@angular/core';
 
 // External modules
 import { TranslateModule } from '@ngx-translate/core';
@@ -14,14 +13,10 @@ import { TranslateModule } from '@ngx-translate/core';
   standalone  : true,
   imports     : [NgIf, TranslateModule]
 })
-export class ProgressBarComponent implements OnInit
+export class ProgressBarComponent
 {
   @Input() withLabel : boolean = false;
 
   constructor() { }
-
-  public ngOnInit() : void
-  {
-  }
 
 }

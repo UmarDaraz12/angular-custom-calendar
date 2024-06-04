@@ -1,29 +1,24 @@
 <!--suppress ALL -->
-
-
-
-
-<section>
-  @switch (component) {
-    @case ("Appointment") {
-  <div style="width:300px">
-    <h2 mat-dialog-title>Add Appointment</h2>
-    <div mat-dialog-content>
-      <form [formGroup]="appointmentForm">
-        <mat-form-field style="width: 100%; padding: 20px; box-sizing: border-box;">
-          <input type="text" matInput formControlName="title" placeholder="Name" autocomplete="off">
-        </mat-form-field>
-        <mat-form-field style="width: 100%; padding: 20px; box-sizing: border-box;">
-          <input type="text" matInput formControlName="description" placeholder="Description" autocomplete="off">
-        </mat-form-field>
-        <mat-form-field>
-          <input matInput [matDatepicker]="picker" formControlName="date">
-          <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-          <mat-datepicker #picker></mat-datepicker>
-        </mat-form-field>
-      </form>
-    </div>
-    <div align="end" mat-dialog-actions>
+<section [ngSwitch]="component">
+  <ng-container *ngSwitchCase="'Appointment'">
+    <div style="width:300px">
+      <h2 mat-dialog-title>Add Appointment</h2>
+      <div mat-dialog-content>
+        <form [formGroup]="appointmentForm">
+          <mat-form-field style="width: 100%; padding: 20px; box-sizing: border-box;">
+            <input type="text" matInput formControlName="title" placeholder="Name" autocomplete="off">
+          </mat-form-field>
+          <mat-form-field style="width: 100%; padding: 20px; box-sizing: border-box;">
+            <input type="text" matInput formControlName="description" placeholder="Description" autocomplete="off">
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput [matDatepicker]="picker" formControlName="date">
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        </form>
+      </div>
+      <div align="end" mat-dialog-actions>
         <span>
           <button
             type="button"
@@ -42,11 +37,7 @@
             Cancel
           </button>
         </span>
+      </div>
     </div>
-  </div>
-    }
-  @case ("ABC") {
-  <div>Blue</div>
-  }
-  }
+  </ng-container>
 </section>

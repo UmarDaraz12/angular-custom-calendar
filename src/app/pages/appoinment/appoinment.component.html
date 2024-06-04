@@ -21,7 +21,7 @@
         </div>
         <div class="days" cdkDropListGroup>
           <div style="border: 2px solid #c3b0b0; padding:10px;"
-               *ngFor="let day of daysInMonth" cdkDropList [cdkDropListData]="day.date" (cdkDropListDropped)="drop($event,day)">
+               *ngFor="let day of daysInMonth" cdkDropList  (cdkDropListDropped)="drop($event,day)">
             <span>{{ day.date | date: 'd' }}</span>
             <div style="background-color: #adadad; width: 100%;cursor:pointer;margin: 2px"
                  *ngFor="let event of day?.events"  cdkDropList cdkDrag [cdkDragData]="event" (cdkDropListDropped)="drop($event,day)">

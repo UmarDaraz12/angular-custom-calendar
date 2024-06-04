@@ -1,6 +1,5 @@
 // Angular modules
 import { Component }       from '@angular/core';
-import { OnInit }          from '@angular/core';
 import { Input }           from '@angular/core';
 import { Output }          from '@angular/core';
 import { EventEmitter }    from '@angular/core';
@@ -16,17 +15,14 @@ import { TranslateModule } from '@ngx-translate/core';
   standalone  : true,
   imports     : [FormsModule, TranslateModule]
 })
-export class FormConfirmComponent implements OnInit
+export class FormConfirmComponent
 {
-  @Input()  data        : any;
+  @Input()  data        : string;
   @Output() submitData  : EventEmitter<boolean> = new EventEmitter();
   @Output() submitClose : EventEmitter<null>    = new EventEmitter();
 
   constructor() { }
 
-  public ngOnInit() : void
-  {
-  }
 
   // -------------------------------------------------------------------------------
   // NOTE Action -------------------------------------------------------------------

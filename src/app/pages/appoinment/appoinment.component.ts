@@ -17,11 +17,16 @@ import {
   CdkDropListGroup,
 } from "@angular/cdk/drag-drop";
 import {MatIcon} from "@angular/material/icon";
-class Event {
+export class Event {
   id!: number ;
   date!: Date ;
   title!: string ;
   description!: string ;
+}
+
+export class MonthInterface {
+  date!: Date
+  events!: Event[]
 }
 
 // noinspection JSUnusedLocalSymbols,JSUnusedGlobalSymbols
@@ -35,7 +40,7 @@ class Event {
 export class AppoinmentComponent implements OnInit {
   viewDate: Date = new Date();
   weekDays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-  daysInMonth: any[] = [];
+  daysInMonth: MonthInterface[] = [];
   selectedEvent: Event = new Event();
   constructor
   (
@@ -115,7 +120,7 @@ export class AppoinmentComponent implements OnInit {
     this.eventService.deleteEvent(eventId);
     this.loadMonth();
   }
-  drop(event: CdkDragDrop<Event[]>, day: Event): void {
+  drop(event: CdkDragDrop<MonthInterface[]>, day: MonthInterface): void {
     console.log(event, '<<<')
     const draggedEvent = event.item.data;
 
