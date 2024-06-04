@@ -31,6 +31,7 @@ export class HomeComponent implements OnInit
 
   public ngOnInit() : void
   {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     setTimeout(_ =>
     {
       this.storeService.isLoading.set(false);

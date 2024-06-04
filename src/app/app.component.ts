@@ -1,7 +1,6 @@
 // Angular modules
 import { NgIf }             from '@angular/common';
 import { Component }        from '@angular/core';
-import { OnInit }           from '@angular/core';
 import { RouterOutlet }     from '@angular/router';
 
 // Services
@@ -17,7 +16,7 @@ import { ToastComponent }   from '@blocks/toast/toast.component';
   standalone  : true,
   imports     : [RouterOutlet, ToastComponent, NgIf]
 })
-export class AppComponent implements OnInit
+export class AppComponent
 {
   constructor
   (
@@ -30,9 +29,7 @@ export class AppComponent implements OnInit
   // NOTE Init ---------------------------------------------------------------------
   // -------------------------------------------------------------------------------
 
-  public ngOnInit() : void
-  {
-  }
+
 
   // -------------------------------------------------------------------------------
   // NOTE Actions ------------------------------------------------------------------

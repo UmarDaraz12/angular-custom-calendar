@@ -22,7 +22,7 @@ import { ProgressBarComponent } from '@blocks/progress-bar/progress-bar.componen
   standalone  : true,
   imports     : [NgIf, ProgressBarComponent, RouterOutlet, AsyncPipe]
 })
-export class AuthComponent implements OnInit
+export class AuthComponent
 {
   // NOTE Component properties
   public appName    : string  = environment.appName;
@@ -36,9 +36,6 @@ export class AuthComponent implements OnInit
 
   }
 
-  public ngOnInit() : void
-  {
-  }
 
   // -------------------------------------------------------------------------------
   // NOTE Init ---------------------------------------------------------------------

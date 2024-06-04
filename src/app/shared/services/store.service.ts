@@ -21,7 +21,7 @@ export class StoreService
 
   constructor
   (
-    @Inject(PLATFORM_ID) private platformId : Object,
+    @Inject(PLATFORM_ID) private platformId : NonNullable<unknown>,
     private translateService : TranslateService
   )
   {

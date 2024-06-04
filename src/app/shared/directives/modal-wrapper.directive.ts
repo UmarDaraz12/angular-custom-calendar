@@ -3,6 +3,7 @@ import { Directive }        from '@angular/core';
 import { ViewContainerRef } from '@angular/core';
 
 @Directive({
+  // eslint-disable-next-line @angular-eslint/directive-selector
   selector   : '[modal-wrapper-host]',
   standalone : true,
 })

@@ -21,7 +21,7 @@ export class StringHelper
 
     for (const [key, value] of Object.entries(parameters))
     {
-      if (key === undefined || value === undefined)
+      if (key == undefined || value === undefined)
         continue;
       parts.append(key, value)
     }
