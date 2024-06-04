@@ -17,8 +17,12 @@ import {
   CdkDropListGroup,
 } from "@angular/cdk/drag-drop";
 import {MatIcon} from "@angular/material/icon";
-
-
+class Event {
+  id!: number ;
+  date!: Date ;
+  title!: string ;
+  description!: string ;
+}
 
 // noinspection JSUnusedLocalSymbols,JSUnusedGlobalSymbols
 @Component({
@@ -32,7 +36,7 @@ export class AppoinmentComponent implements OnInit {
   viewDate: Date = new Date();
   weekDays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
   daysInMonth: any[] = [];
-  selectedEvent: any = null;
+  selectedEvent: Event = new Event();
   constructor
   (
     public storeService : StoreService,
@@ -42,6 +46,7 @@ export class AppoinmentComponent implements OnInit {
   { }
   public ngOnInit() : void
   {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     setTimeout(_ =>
     {
       this.storeService.isLoading.set(false);
@@ -49,7 +54,7 @@ export class AppoinmentComponent implements OnInit {
     this.loadMonth();
   }
 
-  addAppointment(data?: any){
+  addAppointment(data?: Event){
     this._dialog.open(CustomModalComponent, {
       data: {
         component: 'Appointment',
@@ -59,7 +64,7 @@ export class AppoinmentComponent implements OnInit {
       exitAnimationDuration: '500ms'
     })
       .afterClosed().subscribe({
-      next: (value: any) => {
+      next: (value: Event) => {
         if (value){
           if (value.id){
             this.eventService.updateEvent(value);
@@ -96,13 +101,13 @@ export class AppoinmentComponent implements OnInit {
     this.loadMonth();
   }
 
-  selectDay(day: any): void {
-    this.selectedEvent = { id: day?.id,date: day?.date, title: day?.title, description: day?.description };
+  selectDay(day: Event): void {
+    this.selectedEvent = day;
     console.log(this.selectedEvent,'<<<')
     this.addAppointment(this.selectedEvent);
   }
 
-  editEvent(event: any): void {
+  editEvent(event: Event): void {
     this.selectedEvent = { ...event };
   }
 
@@ -110,7 +115,7 @@ export class AppoinmentComponent implements OnInit {
     this.eventService.deleteEvent(eventId);
     this.loadMonth();
   }
-  drop(event: CdkDragDrop<any[]>, day: any): void {
+  drop(event: CdkDragDrop<Event[]>, day: Event): void {
     console.log(event, '<<<')
     const draggedEvent = event.item.data;
 
